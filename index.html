@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solstice & Sage | Artisanal Gastronomy & Fine Dining</title>
+  
+  <!-- SEO & Portfolio Meta Tags -->
+  <meta name="description" content="Solstice & Sage is a contemporary fine-dining restaurant featuring seasonal tasting menus, sommelier pairings, and farm-to-table cuisine. Built with clean, modern, responsive frontend architecture." />
+  <meta name="keywords" content="Restaurant, Fine Dining, Gourmet Menu, Online Reservation, Food Portfolio, Responsive Web Design" />
+  <meta name="author" content="Frontend Portfolio Project" />
+  <meta property="og:title" content="Solstice & Sage | Artisanal Gastronomy" />
+  <meta property="og:description" content="Explore seasonal dishes, book tables instantly, and experience sensory gastronomy." />
+  <meta property="og:type" content="restaurant.restaurant" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Schema.org Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Solstice & Sage",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "priceRange": "$$$$",
+    "servesCuisine": "Contemporary American, French Haute Cuisine",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "428 Epicurean Way, Suite 100",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94103"
+    },
+    "telephone": "+1-415-555-0198",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "17:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday", "Sunday"],
+        "opens": "12:00",
+        "closes": "15:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Solstice & Sage Homepage">
+        <div class="brand-icon">S</div>
+        <div class="brand-text">Solstice <span>&</span> Sage</div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#specials" class="nav-link">Chef's Specials</a>
+        <a href="#menu" class="nav-link">Full Menu</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#reservations" class="nav-link">Reservations</a>
+        <a href="#reviews" class="nav-link">Diner Reviews</a>
+        <a href="#contact" class="nav-link">Hours & Location</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+
+        <!-- Tasting Bag / Order Button -->
+        <button class="cart-toggle-btn" data-action="open-cart" title="View Tasting Bag" aria-label="Open Tasting Bag">
+          <span>🛍️</span>
+          <span class="cart-count-badge" id="cartBadgeCount" style="display: none;">0</span>
+        </button>
+
+        <!-- Book Table CTA -->
+        <a href="#reservations" class="btn btn-primary btn-sm" style="display: inline-flex;">Book Table</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-content-grid">
+        <div class="hero-text-block">
+          <div class="hero-badge">
+            <span>★</span> Michelin Guide Recommended • 2026
+          </div>
+          <h1 class="hero-title">
+            Where Culinary Passion Meets <span class="text-gold">Modern Elegance</span>.
+          </h1>
+          <p class="hero-description">
+            Experience contemporary haute gastronomy orchestrated by Executive Chef Marcus Vance.
+            Every dish is an exploration of sustainable micro-farms, heirloom harvest, and master-sommelier pairings.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn btn-primary">
+              <span>Explore Tasting Menu</span>
+              <span>→</span>
+            </a>
+            <a href="#reservations" class="btn btn-secondary">
+              <span>Reserve a Table</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <h3>15+</h3>
+              <p>Culinary Awards</p>
+            </div>
+            <div class="stat-item">
+              <h3>4.9★</h3>
+              <p>1,400+ Diners</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Organic Local Sourcing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-card">
+          <div class="hero-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" 
+              alt="Artisanal Steak and Gourmet Plating at Solstice & Sage" 
+              class="hero-main-img" 
+            />
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-card-rating float-animation">
+            <div>
+              <div class="floating-rating-stars">★★★★★</div>
+              <div class="floating-card-title">Top Rated Experience</div>
+              <div class="floating-card-sub">Selected as Best Fine Dining 2026</div>
+            </div>
+          </div>
+
+          <div class="floating-card-award">
+            <div class="award-badge-icon">🏆</div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.88rem;">James Beard Award</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Nominee for Best Culinary Craft</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CHEF'S SPECIAL DISHES SHOWCASE ==================== -->
+  <section class="specials-section" id="specials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Curated Highlights</span>
+        <h2 class="section-title">The Chef's Signature Collection</h2>
+        <p class="section-subtitle">
+          Handcrafted by our brigade de cuisine daily, featuring limited seasonal harvests and exclusive vintage pairings.
+        </p>
+      </div>
+
+      <!-- Rendered dynamically by js/menu.js -->
+      <div class="specials-grid" id="specialsGrid"></div>
+
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="#menu" class="btn btn-secondary">
+          <span>View All 18+ Seasonal Dishes</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE FULL MENU SECTION ==================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Epicurean Selections</span>
+        <h2 class="section-title">Explore Our Full Menu</h2>
+        <p class="section-subtitle">
+          Filter by course, search ingredients, discover dietary-specific creations, and customize your tasting experience.
+        </p>
+      </div>
+
+      <!-- Menu Controls & Filter Bar -->
+      <div class="menu-filter-bar">
+        <!-- Category Tabs -->
+        <div class="category-tabs-container" id="categoryTabs"></div>
+
+        <!-- Secondary Controls: Search, Dietary Filters, Sort -->
+        <div class="menu-controls-row">
+          <div class="menu-search-wrapper">
+            <span class="menu-search-icon">🔍</span>
+            <input 
+              type="text" 
+              class="menu-search-input" 
+              id="menuSearchInput" 
+              placeholder="Search dishes, ingredients, or allergens..." 
+              aria-label="Search menu items" 
+            />
+          </div>
+
+          <div class="dietary-filters-group" id="dietaryChips">
+            <button class="dietary-chip" data-dietary="vegetarian">🌿 Vegetarian</button>
+            <button class="dietary-chip" data-dietary="vegan">🌱 Vegan</button>
+            <button class="dietary-chip" data-dietary="gluten-free">🌾 Gluten-Free</button>
+            <button class="dietary-chip" data-dietary="chef-recommended">⭐ Chef's Pick</button>
+          </div>
+
+          <div class="sort-select-wrapper">
+            <select class="sort-select" id="menuSortSelect" aria-label="Sort dishes">
+              <option value="recommended">Sort: Chef Recommended</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+            <span class="sort-select-arrow">▼</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Grid Rendered by js/menu.js -->
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT & CHEF STORY SECTION ==================== -->
+  <section class="about-section" id="story">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-collage">
+          <img 
+            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" 
+            alt="Chef plating gourmet course in restaurant kitchen" 
+            class="about-main-image" 
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" 
+            alt="Wine cellar and glasses" 
+            class="about-accent-image" 
+          />
+          <div class="about-experience-badge">
+            <strong>14</strong>
+            <span>Years of Craft</span>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <span class="section-tag">The Philosophy</span>
+          <h2 class="section-title">Artisan Gastronomy Rooted in Nature</h2>
+          <p class="about-narrative">
+            Founded with an unwavering commitment to culinary purity, Solstice & Sage celebrates the harmony between 
+            unrivaled terroir and progressive culinary technique. Our kitchen maintains direct partnerships with over 
+            twenty organic regional farms, fishermen who practice zero-bycatch hook-and-line harvesting, and boutique 
+            foragers across the Pacific coast.
+          </p>
+
+          <!-- Chef Spotlight -->
+          <div class="chef-spotlight-card">
+            <img 
+              src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&q=80" 
+              alt="Executive Chef Marcus Vance" 
+              class="chef-avatar" 
+            />
+            <div class="chef-info">
+              <h4>Marcus Vance</h4>
+              <p>Executive Chef & Co-Founder</p>
+              <div class="chef-quote">
+                “Every plate tells the story of our soil, the hands that cultivated it, and the fleeting beauty of each season.”
+              </div>
+            </div>
+          </div>
+
+          <div class="features-check-grid">
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>100% Certified Organic Micro-farms</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>Zero Single-Use Plastics & Food Waste Audit</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>Grand Sommelier Cellar with 800+ Vintages</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon">✓</span>
+              <span>Dedicated Vegan & Allergen Tasting Menus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TABLE RESERVATION SECTION ==================== -->
+  <section class="reservation-section" id="reservations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Reserve Your Evening</span>
+        <h2 class="section-title">Book an Unforgettable Table</h2>
+        <p class="section-subtitle">
+          Intimate dining, private greenhouse celebrations, and custom sommelier wine vault tastings.
+        </p>
+      </div>
+
+      <div class="reservation-card-wrapper">
+        <form id="reservationForm">
+          <div class="reservation-form-grid">
+            
+            <!-- Number of Guests -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Party Size</span>
+                <small style="color: var(--text-muted);">Max 14 online</small>
+              </label>
+              <div class="stepper-container">
+                <button type="button" class="stepper-btn" id="guestCountMinus" aria-label="Decrease guests">-</button>
+                <div class="stepper-value" id="guestCountValue">2 Guests</div>
+                <button type="button" class="stepper-btn" id="guestCountPlus" aria-label="Increase guests">+</button>
+              </div>
+            </div>
+
+            <!-- Date Picker -->
+            <div class="form-group">
+              <label class="form-label" for="resDate">
+                <span>Reservation Date</span>
+              </label>
+              <input type="date" class="form-input" id="resDate" required />
+            </div>
+
+            <!-- Seating Preference -->
+            <div class="form-group full-width">
+              <label class="form-label">Select Seating Atmosphere</label>
+              <div class="seating-options-row" id="seatingOptions">
+                <div class="seating-radio-card active" data-seating="Main Dining Room">
+                  <span class="seating-icon">🕯️</span>
+                  <span class="seating-name">Main Dining Room</span>
+                  <span class="seating-hint">Intimate candlelight ambiance</span>
+                </div>
+                <div class="seating-radio-card" data-seating="Greenhouse Solarium">
+                  <span class="seating-icon">🌿</span>
+                  <span class="seating-name">Greenhouse Solarium</span>
+                  <span class="seating-hint">Botanical garden under glass</span>
+                </div>
+                <div class="seating-radio-card" data-seating="Wine Vault Cellar">
+                  <span class="seating-icon">🍷</span>
+                  <span class="seating-name">Wine Vault Cellar</span>
+                  <span class="seating-hint">Private sommelier tasting</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Time Slots -->
+            <div class="form-group full-width">
+              <label class="form-label">
+                <span>Select Dining Time</span>
+                <small style="color: var(--accent-gold);">Dinner & Lunch Services</small>
+              </label>
+              <div class="time-slots-container" id="timeSlotsContainer">
+                <button type="button" class="time-slot-btn" data-time="12:30 PM">12:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="1:30 PM">1:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="5:30 PM">5:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="6:30 PM">6:30 PM</button>
+                <button type="button" class="time-slot-btn active" data-time="7:30 PM">7:30 PM (Prime)</button>
+                <button type="button" class="time-slot-btn" data-time="8:30 PM">8:30 PM</button>
+                <button type="button" class="time-slot-btn" data-time="9:30 PM">9:30 PM</button>
+              </div>
+            </div>
+
+            <!-- Guest Contact Details -->
+            <div class="form-group">
+              <label class="form-label" for="resName">Full Name</label>
+              <input type="text" class="form-input" id="resName" placeholder="e.g. Eleanor Vance" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="resEmail">Email Address</label>
+              <input type="email" class="form-input" id="resEmail" placeholder="eleanor@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="resPhone">Phone Number</label>
+              <input type="tel" class="form-input" id="resPhone" placeholder="+1 (415) 000-0000" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="resOccasion">Special Occasion</label>
+              <select class="form-select" id="resOccasion">
+                <option value="Casual Dinner">Casual Fine Dining</option>
+                <option value="Anniversary">Anniversary Celebration</option>
+                <option value="Birthday">Birthday Gathering</option>
+                <option value="Business Dinner">Executive Business Dinner</option>
+                <option value="Proposal / Romance">Romantic Celebration</option>
+              </select>
+            </div>
+
+            <!-- Dietary / Special Notes -->
+            <div class="form-group full-width">
+              <label class="form-label" for="resNotes">Dietary Notes & Special Requests (Optional)</label>
+              <textarea class="form-textarea" id="resNotes" rows="2" placeholder="Tell our chef about any severe allergies, seating preferences, or special wine pairings..."></textarea>
+            </div>
+
+          </div>
+
+          <div class="reservation-submit-row">
+            <div class="reservation-guarantee-note">
+              <span>🔒</span>
+              <span>Instant table confirmation • No cancellation fees up to 12 hours prior</span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">
+              Confirm Table Reservation
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DINER REVIEWS & PRESS ==================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Stories from Our Diners</h2>
+        <p class="section-subtitle">
+          Over 1,400 five-star memories created across celebratory evenings, milestones, and epicurean discoveries.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">
+            “The Pan-Seared Chilean Sea Bass with saffron emulsion was pure poetry. The atmosphere in the Greenhouse Solarium transported us entirely.”
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sophia Lin" class="reviewer-avatar" />
+            <div class="reviewer-info">
+              <h5>Sophia Lin</h5>
+              <p>Verified Diner • Anniversary Dinner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">
+            “Undeniably the finest Wagyu in the city. The wine pairing by the Head Sommelier matched every note with precision and grace.”
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Arthur Pendelton" class="reviewer-avatar" />
+            <div class="reviewer-info">
+              <h5>Arthur Pendelton</h5>
+              <p>Food Critic • Epicurean Gazette</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">
+            “The attention to vegan and dietary options is unmatched in fine dining. The roasted squash risotto was sublime in every mouthful.”
+          </p>
+          <div class="reviewer-meta">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Camille Dubois" class="reviewer-avatar" />
+            <div class="reviewer-info">
+              <h5>Camille Dubois</h5>
+              <p>Verified Diner • Sommelier Vault Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Press mentions strip -->
+      <div class="press-strip">
+        <div class="press-title">Accolades & Features</div>
+        <div class="press-logos-row">
+          <div class="press-logo-item">MICHELIN GUIDE 2026</div>
+          <div class="press-logo-item">FOOD & WINE</div>
+          <div class="press-logo-item">THE GASTRONOMY REVIEW</div>
+          <div class="press-logo-item">EATER AWARDS</div>
+          <div class="press-logo-item">WINE SPECTATOR EXCELLENCE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOCATION, HOURS & CONTACT ==================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visit & Connect</span>
+        <h2 class="section-title">Hours, Location & Atmosphere</h2>
+        <p class="section-subtitle">
+          Located in the heart of the historic culinary district. Valet service available at our front portico.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Live Schedule & Service Hours Card -->
+        <div class="contact-hours-card">
+          <!-- Real-Time Open/Closed status badge -->
+          <div id="liveOpenStatus" class="status-pill open">
+            <span class="status-indicator-dot"></span>
+            <span>Checking Service Hours...</span>
+          </div>
+
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Service Schedules</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+            Kitchen orders close 45 minutes prior to listed closing times.
+          </p>
+
+          <div class="hours-table">
+            <div class="hours-row">
+              <span class="hours-day">Tuesday – Thursday</span>
+              <span>5:00 PM – 11:00 PM (Dinner)</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Friday – Saturday</span>
+              <span>12:00 PM – 3:00 PM & 5:00 PM – 11:30 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sunday</span>
+              <span>12:00 PM – 3:00 PM & 5:00 PM – 10:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Monday</span>
+              <span style="color: var(--accent-terracotta);">Closed (Private Cellar Events)</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; padding: 1.25rem; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+            <div style="font-weight: 700; font-size: 0.92rem; color: var(--accent-gold); margin-bottom: 0.25rem;">
+              DRESS CODE & POLICIES
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              Smart evening attire encouraged. We invite our guests to dress for a refined dining celebration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact & Location Info Card -->
+        <div class="contact-info-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">The Destination</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+            Housed within the restored 19th-century architectural heritage pavilion.
+          </p>
+
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="contact-icon-box">📍</div>
+              <div class="contact-detail-text">
+                <h5>Physical Address</h5>
+                <p>428 Epicurean Way, Historic District, San Francisco, CA 94103</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-box">📞</div>
+              <div class="contact-detail-text">
+                <h5>Concierge & Reservations</h5>
+                <p>+1 (415) 555-0198 • Lines open daily from 11:00 AM</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-box">✉️</div>
+              <div class="contact-detail-text">
+                <h5>Private Events & Press Inquiries</h5>
+                <p>concierge@solsticesage.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-box">🚗</div>
+              <div class="contact-detail-text">
+                <h5>Valet & Parking</h5>
+                <p>Complimentary white-glove valet on arrival from 5:00 PM.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+              Open Navigation Map & Directions ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="brand-icon">S</div>
+            <div class="brand-text">Solstice <span>&</span> Sage</div>
+          </div>
+          <p>
+            An ode to modern culinary craft, seasonal micro-harvests, and warm hospitable elegance.
+          </p>
+          <div class="social-links-row">
+            <a href="#hero" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#hero" class="social-btn" aria-label="Twitter">🐦</a>
+            <a href="#hero" class="social-btn" aria-label="LinkedIn">💼</a>
+            <a href="#hero" class="social-btn" aria-label="TripAdvisor">🦉</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="#hero">Welcome</a>
+            <a href="#specials">Signature Specials</a>
+            <a href="#menu">Full Epicurean Menu</a>
+            <a href="#story">Our Chef & Ethos</a>
+            <a href="#reservations">Reserve Table</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Guest Services</h4>
+          <div class="footer-links-list">
+            <a href="#reservations">Private Dining Room</a>
+            <a href="#specials">Wine Cellar Pairings</a>
+            <a href="#contact">Dress Code & Directions</a>
+            <a href="#contact">Gift Experiences</a>
+            <a href="#contact">Press & Media Kit</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Private Cellar Newsletter</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Subscribe to receive invitation-only previews of seasonal menus and rare vintage tastings.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email..." required />
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe to Gazette</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          © 2026 Solstice & Sage Restaurant. All culinary rights reserved.
+        </div>
+        <div class="portfolio-highlight-badge">
+          ✦ Portfolio Project: Clean, Responsive Web Application
+        </div>
+        <div style="font-size: 0.82rem; color: var(--text-muted);">
+          Crafted with Semantic HTML5 • CSS3 Custom Properties • Modern Vanilla JS
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== TASTING BAG / ORDER DRAWER ==================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Tasting Bag Drawer">
+    <div class="cart-header">
+      <h3>
+        <span>🛍️</span>
+        <span>Your Tasting Bag</span>
+      </h3>
+      <button class="cart-close-btn" id="closeCartDrawerBtn" aria-label="Close Tasting Bag">✕</button>
+    </div>
+
+    <!-- Rendered dynamically by js/cart.js -->
+    <div class="cart-items-container" id="cartItemsContainer"></div>
+
+    <div class="cart-footer">
+      <!-- Promo code discount -->
+      <div class="promo-code-box">
+        <input type="text" class="promo-input" id="promoCodeInput" placeholder="Promo code (e.g. WELCOME10)" />
+        <button class="btn btn-secondary btn-sm" id="applyPromoBtn">Apply</button>
+      </div>
+      <div id="promoFeedback" style="font-size: 0.8rem; margin-top: -0.75rem; margin-bottom: 0.75rem;"></div>
+
+      <!-- Financial Totals -->
+      <div class="cart-totals-summary">
+        <div class="cart-total-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-total-row" id="cartDiscountRow" style="display: none; color: var(--accent-emerald);">
+          <span>Culinary Discount</span>
+          <span id="cartDiscountAmount">-$0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Service & State Tax (8%)</span>
+          <span id="cartTax">$0.00</span>
+        </div>
+        <div class="cart-total-row final">
+          <span>Estimated Total</span>
+          <span id="cartFinalTotal">$0.00</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="cartCheckoutBtn" style="width: 100%; padding: 0.95rem;">
+        Proceed to Online Order Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== DISH DETAIL MODAL ==================== -->
+  <div class="modal-backdrop" id="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishModalTitle">
+    <div class="modal-content-card">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="dishModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==================== RESERVATION CONFIRMATION TICKET MODAL ==================== -->
+  <div class="modal-backdrop" id="ticketModal" role="dialog" aria-modal="true" aria-label="Reservation Confirmation">
+    <div class="modal-content-card">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="ticketModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==================== CHECKOUT SIMULATION MODAL ==================== -->
+  <div class="modal-backdrop" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Order Confirmation">
+    <div class="modal-content-card">
+      <button class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="checkoutModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/menu-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+The command exited with code 0.
+Output:
+
+
+    Directory: C:\Users\Admin\.gemini\antigravity\scratch\solstice-restaurant
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        25-09-2026     21:41                css                                                                  
+d-----        25-09-2026     21:41                js                                                                   
+
+
+    Directory: C:\Users\Admin\.gemini\antigravity\scratch\solstice-restaurant\assets
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        25-09-2026     21:41                images                                                               
+
+
+
